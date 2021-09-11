@@ -13976,7 +13976,14 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Files to be imported :</p>
+<p>Team #5 | Movie Pruners</p>
+<p>Zachary Chang - Hugo Tessier - Jameson Toper - Ellis Wright</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For this phae 4 files need to be imported and merged:</p>
 <ul>
 <li><code>title.akas.tsv</code></li>
 <li><code>title.basics.tsv</code></li>
@@ -13990,6 +13997,12 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h1 id="1---IMPORT">1 - IMPORT<a class="anchor-link" href="#1---IMPORT">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Libraries used to import and treat the datasets. All the files has to be in a <code>data/</code> folder. <code>import_tsv</code> is a function</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14012,7 +14025,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;../data/&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">datapath</span> <span class="o">=</span> <span class="s2">&quot;data/&quot;</span>
 <span class="k">def</span> <span class="nf">import_tsv</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span> <span class="n">datapath</span> <span class="o">+</span> <span class="n">filename</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
 </pre></div>
@@ -14025,11 +14038,12 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong><em>Notes:</em></strong></p>
+<p><strong><em>Notes:</em></strong> 
+Few things can be noted after a first glance at the files and are considered in the <code>import_tsv</code> function.</p>
 <ul>
-<li>encoding UTF-8</li>
-<li>TSV files tabulate separator</li>
-<li>Non-homogeneous types in column from different chunks : add of dtype = str</li>
+<li><code>sep='\t'</code>: the values are separated by tabulates (TSV files)</li>
+<li><code>encoding='utf-8'</code>: the files are encoding in UTF-8</li>
+<li><code>dtype=str</code> as we won't use datatypes in this phase, it's easier and faster to consider every columns as strings</li>
 </ul>
 
 </div>
@@ -14513,7 +14527,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Explode-multiple-valued-cells">Explode multiple valued cells<a class="anchor-link" href="#Explode-multiple-valued-cells">&#182;</a></h3><h4 id="genres-explosion"><code>genres</code> explosion<a class="anchor-link" href="#genres-explosion">&#182;</a></h4>
+<h3 id="Explode-multiple-valued-cells">Explode multiple valued cells<a class="anchor-link" href="#Explode-multiple-valued-cells">&#182;</a></h3><p>Some cells have multiple values separated by commas and need to by plit into several rows.</p>
+<h4 id="genres-explosion"><code>genres</code> explosion<a class="anchor-link" href="#genres-explosion">&#182;</a></h4>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -15216,7 +15231,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Explode-multiple-valued-cells">Explode multiple valued cells<a class="anchor-link" href="#Explode-multiple-valued-cells">&#182;</a></h3>
+<h3 id="Explode-multiple-valued-cells">Explode multiple valued cells<a class="anchor-link" href="#Explode-multiple-valued-cells">&#182;</a></h3><p>Two variables (<code>knownForTitles</code> and<code>primaryProfession</code>) have multiple values and nedd to be treated.</p>
+
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -16073,7 +16089,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Filter-on-the-movie-type">Filter on the <strong><em>movie</em></strong> type<a class="anchor-link" href="#Filter-on-the-movie-type">&#182;</a></h3>
+<h3 id="Filter-on-the-movie-type">Filter on the <strong><em>movie</em></strong> type<a class="anchor-link" href="#Filter-on-the-movie-type">&#182;</a></h3><p>We searched for this information in 3 differents variables</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -16138,7 +16155,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>After a search in <code>title_akas.types</code>, <code>title_basics.genres</code> and <code>title_basics.titleType</code> it seems that the only interesting way to filter movies is with the last one. We can keep the categories <code>movie</code> and <code>tvMovie</code>.</p>
+<p>After a search in <code>title_akas.types</code>, <code>title_basics.genres</code> and <code>title_basics.titleType</code> it seems that the only interesting way to filter movies is with the last variable. We can keep the categories <code>movie</code> and <code>tvMovie</code>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16426,7 +16443,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Information contained in the <code>primaryProfession</code> variable of <code>name_basics</code> dataset. From this list we extract 2 categories : <code>actor</code> and <code>actress</code>.</p>
+<p>Information contained in the <code>primaryProfession</code> variable of <code>name_basics</code> dataset. From this list we extract 2 categories : <code>actor</code> and <code>actress</code>. We decided not to keep <code>miscellaneous</code> category which seemed too vague.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We also kept all the other professions of the actress/actor and as additionnal information on them. To do so, we first identify the persons ID and keep all the rows with these IDs.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -16627,12 +16650,6 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We keep the actress/actor and all their other professions as additionnal information on them.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h1 id="3---MERGE">3 - MERGE<a class="anchor-link" href="#3---MERGE">&#182;</a></h1>
 </div>
@@ -16671,7 +16688,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#test of the format of all the key before the join</span>
-<span class="n">expr</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;tt[0-9]+&#39;</span> <span class="c1">#regular expression</span>
+<span class="n">expr</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;tt[0-9]+&#39;</span> <span class="c1">#regular expression to identidy correctly formatted title IDs</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;title.akas:&quot;</span><span class="p">,</span> <span class="n">title_akas_join</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;title.ratings:&quot;</span><span class="p">,</span> <span class="n">title_ratings_join</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">expr</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">())</span>
@@ -16760,7 +16777,7 @@ name.basics: False
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>By sorting the most common title identifiers we find that the most frequent is <code>'\N'</code> and that it corresponds exactly to the non-matching values amount.</p>
+<p>We the most common title identifiers</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -16805,6 +16822,12 @@ Name: tconst, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We find that the most frequent is <code>'\N'</code> and that it corresponds exactly to the non-matching values amount. We just have to get rid of these missing values for title IDs.</p>
+
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -16886,8 +16909,8 @@ Name: tconst, dtype: int64</pre>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><em>Note:</em></p>
-<p>we should justify the choice of <code>inner</code> or <code>outer</code> and the order of the joins. Choosing <code>inner</code> make the choice of the join order useless but it ignores every unknow index (movie title) and deletes a lot of records (it may not be a big deal because they contain missing values of at least an entire dataset variables)</p>
+<p><strong><em>Note:</em></strong></p>
+<p>For our further study, we assume that the movie needs to be present in all datasets so that we have information on its ratings, its characteristics, its famous actors, etc. That's the reason why we choose to make an <code>inner</code> join: we only keep titles that appear in all datasets. With all joins being inner, the order of the intersection doesn't change the result.</p>
 
 </div>
 </div>
@@ -17253,32 +17276,6 @@ Name: tconst, dtype: int64</pre>
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;us.movies.actors.tsv&#39;</span>
 <span class="n">us_movies_actors</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span> <span class="n">datapath</span> <span class="o">+</span> <span class="n">filename</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Questions-&amp;-Remarks">Questions &amp; Remarks<a class="anchor-link" href="#Questions-&amp;-Remarks">&#182;</a></h1><ul>
-<li>Can we filter before the merge?</li>
-<li>should we rename the columns after the explosion?</li>
-<li>Should we include <code>miscellaneous</code> in the profession filter?</li>
-<li>should we keep the other professions of actors/actress? </li>
-<li>should we do <code>inner</code> or <code>outer</code> join?</li>
-</ul>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
