@@ -1,47 +1,47 @@
-Variable	Unique Entries	Total Entries	Data Type	Data Classification	Range
-					
-tconst	142461	9465447	String	N	
-					
-nconst	1312824	9465447	String	N	
-					
-primaryName	1221954	9465447	String	N	
-					
-birthYear	189	2550732	float64	S	12.0 - 2018.0
-					
-deathYear	119	826698	float64	S	1569.0 - 2021.0
-					
-primaryProfession	39	9465447	String	N	
-					
-titleType	2	9465447	String	N	
-					
-primaryTitle	125298	9465447	String	N	
-					
-originalTitle	130378	9465447	String	N	
-					
-isAdult	2	9465447	int64	S	0 - 1
-					
-startYear	117	9465308	float64	S	1906.0 - 2022.0
-					
-endYear	0	0	float64	S	
-					
-runtimeMinutes	337	9288532	float64	S	4.0 - 5220.0
-					
-genres	28	9448891	String	N	
-					
-ordering	79	9465447	int64	O	1 - 108
-					
-title	149274	9465447	String	N	
-					
-region	1	9465447	String	N	
-					
-language	5	168462	String	N	
-					
-types	13	7962363	String	N	
-					
-attributes	99	1105031	String	N	
-					
-isOriginalTitle	2	9465447	int64	S	0 - 1
-					
-averageRating	91	9465447	float64	S	1.0 - 10.0
-					
-numVotes	16410	9465447	int64	S	5 - 2455388
+Variable	Unique Entries	Total Entries	Data Type	Data Classification	Number of Empty Values	Range
+						
+tconst	142461	9465447	String	N	0	
+						
+nconst	1312824	9465447	String	N	0	
+						
+primaryName	1221954	9465447	String	N	0	
+						
+birthYear	189	2550732	float64	S	6914715	12.0 - 2018.0
+						
+deathYear	119	826698	float64	S	8638749	1569.0 - 2021.0
+						
+primaryProfession	39	9465447	String	N	0	
+						
+titleType	2	9465447	String	N	0	
+						
+primaryTitle	125298	9465447	String	N	0	
+						
+originalTitle	130378	9465447	String	N	0	
+						
+isAdult	2	9465447	int64	S	0	0 - 1
+						
+startYear	117	9465308	float64	S	139	1906.0 - 2022.0
+						
+endYear	0	0	float64	S	9465447	
+						
+runtimeMinutes	337	9288532	float64	S	176915	4.0 - 5220.0
+						
+genres	28	9448891	String	N	16556	
+						
+ordering	79	9465447	int64	O	0	1 - 108
+						
+title	149274	9465447	String	N	0	
+						
+region	1	9465447	String	N	0	
+						
+language	5	168462	String	N	9296985	
+						
+types	13	7962363	String	N	1503084	
+						
+attributes	99	1105031	String	N	8360416	
+						
+isOriginalTitle	2	9465447	int64	S	0	0 - 1
+						
+averageRating	91	9465447	float64	S	0	1.0 - 10.0
+						
+numVotes	16410	9465447	int64	S	0	5 - 2455388

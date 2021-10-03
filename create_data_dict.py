@@ -46,7 +46,7 @@ cols = {
 
 
 # Start the output table off with the header names
-output_table = [['Variable', 'Unique Entries', 'Total Entries', 'Data Type', 'Data Classification', 'Range']]
+output_table = [['Variable', 'Unique Entries', 'Total Entries', 'Data Type', 'Data Classification', 'Number of Empty Values', 'Range']]
 
 csv_dat = pandas.read_csv(input_data, sep='\t', na_values=['\\N'])
 for heading in csv_dat:
@@ -56,6 +56,7 @@ for heading in csv_dat:
             csv_dat[heading].count(), # The Total Entries column
             data_type if (data_type := csv_dat[heading].dtype) != OBJECT_TYPE else 'String', # The Data Type column
             cols[heading], # Grab the DataClassification from the dict above
+            csv_dat[heading].isna().sum(),
             f'{csv_dat[heading].min()} - {csv_dat[heading].max()}' if csv_dat[heading].dtype in (INT_TYPE, FLOAT_TYPE) else None
         ]
     output_table.append(new_row)
