@@ -3,3 +3,9 @@ data/*
 
 # Jupyter Notebook temporary files
 .ipynb_checkpoints
+
+*.tsv
+
+# Python cache files
+__pycache__/
+*.py[cod]
